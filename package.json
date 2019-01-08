@@ -1,5 +1,5 @@
 {
-  "name": "react-simple-boilerplate",
+  "name": "chatty-app",
   "version": "1.0.0",
   "description": "Simple and lightweight Boilerplate for ReactJS projects",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/noahlotzer/react-simple-boilerplate.git"
+    "url": "https://github.com/negamiri/chatty-app"
   },
   "keywords": [
     "react",
