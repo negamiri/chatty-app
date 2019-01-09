@@ -14,19 +14,29 @@ export default class ChatBar extends Component {
         }
     }
 
+
+    handleChange = (event) => {
+        this.setState({
+            message: {
+                id: Math.floor(Math.random() * 100),
+                username: this.props.user.name,
+                content: event.target.value
+            }
+        })
+    }
+
     onEnter = (event) => {
         if(event.keyCode == 13 && event.shiftKey == false) {
             event.preventDefault();
+            this.props.handler(this.state.message);
             this.setState({
                 message: {
-                    id: Math.floor(Math.random() * 100),
-                    username: this.props.user.name,
-                    content: event.target.value
+                    id: '',
+                    username: '',
+                    content: ''
                 }
             })
         }
-
-        this.props.handler(this.state.message);
     }
 
     render() {
@@ -34,7 +44,7 @@ export default class ChatBar extends Component {
             <div>
                 <footer className="chatbar">
                     <input className="chatbar-username" placeholder="Your Name (Optional)" value={this.props.user.name}/>
-                    <input className="chatbar-message" placeholder="Type a message and hit ENTER" onKeyDown={this.onEnter}/>
+                    <input className="chatbar-message" placeholder="Type a message and hit ENTER" value={this.state.message.content} onChange={this.handleChange} onKeyDown={this.onEnter} />
                 </footer>
             </div>
         )
