@@ -18,7 +18,7 @@ export default class ChatBar extends Component {
     handleChange = (event) => {
         this.setState({
             message: {
-                id: Math.floor(Math.random() * 100),
+                id: Math.floor(Math.random() * 1000),
                 username: this.props.user.name,
                 content: event.target.value
             }

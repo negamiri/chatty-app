@@ -10,8 +10,8 @@ body {
 }
 
 .chatbar {
-  background: tomato;
-  border-top: 1px solid black;
+  background: #81D8D0;
+  // border-top: 1px solid black;
   bottom: 0;
   display: flex;
   left: 0;
@@ -65,8 +65,8 @@ body {
 }
 
 .navbar {
-  background: tomato;
-  border-bottom: 1px solid black;
+  background: #81D8D0;
+  // border-bottom: 1px solid black;
   height: 60px;
   left: 0;
   padding: 0 10px;
@@ -76,7 +76,7 @@ body {
 }
 
 .navbar-brand {
-  color: inherit;
+  color: white;
   display: block;
   float: left;
   font-weight: 700;

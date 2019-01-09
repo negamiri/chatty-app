@@ -48,7 +48,7 @@ export default class App extends Component {
     return (
       <div>
         <nav className="navbar">
-          <a href="/" className="navbar-brand">Chatty</a>
+          <a href="/" className="navbar-brand">Yapper</a>
         </nav>
         <Messages messages={this.state.messages} />
         <ChatBar user={this.state.currentUser} handler={this.addMessage}/>

@@ -1,5 +1,6 @@
 require("../styles/home.scss");
 import React, {Component} from 'react';
+import MessageList from './MessageList.jsx';
 
 
 export default class Messages extends Component {
@@ -8,13 +9,9 @@ export default class Messages extends Component {
         <div>
             <main className="messages">
             {this.props.messages.map(message => {
-                    return (
-                        <div className="message" key={message.id}>
-                            <span className="message-username">{message.username}</span>
-                            <span className="message-content">{message.content}</span>
-                        </div>
-                    )
-                })}
+                return (<MessageList message={message} key={message.id}/>)
+            })
+            }
                 <div className="message system">
                 Anonymous1 changed their name to nomnom.
                 </div>
