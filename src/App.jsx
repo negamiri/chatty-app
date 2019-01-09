@@ -21,8 +21,15 @@ export default class App extends Component {
       }
     ]
     }
+
+    this.addMessage = this.addMessage.bind(this);
   }
 
+  addMessage(newMessage) {
+    const messages = this.state.messages.concat(newMessage);
+    this.setState({messages: messages})
+  }
+/*
   componentDidMount() {
     console.log("componentDidMount <App />");
     setTimeout(() => {
@@ -35,6 +42,7 @@ export default class App extends Component {
       this.setState({messages: messages})
     }, 3000);
   }
+  */
 
   render() {
     return (
@@ -43,7 +51,7 @@ export default class App extends Component {
           <a href="/" className="navbar-brand">Chatty</a>
         </nav>
         <Messages messages={this.state.messages} />
-        <ChatBar user={this.state.currentUser} />
+        <ChatBar user={this.state.currentUser} handler={this.addMessage}/>
       </div>
     );
   }
