@@ -11,7 +11,19 @@ export default class Messages extends Component {
         <div>
             <main className="messages">
             {this.props.messages.map(message => {
-                return (<MessageList message={message} key={message.id}/>)
+                switch(message.type) {
+                    case "incomingMessage":
+                        return (<MessageList message={message} key={message.id}/>);
+                        break;
+                    case "incomingNotification":
+                        return(
+                        <div className="message system">
+                        {message.content}
+                        </div>)
+                        break;
+                    default:
+                        throw new Error("Unknown event type " + message.type);
+                }
             })
             }
                 {/* <div className="message system">

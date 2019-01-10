@@ -16,7 +16,6 @@ export default class App extends Component {
     this.changeUser = this.changeUser.bind(this);
   }
 
-
   addMessage(newMessage) {
     const messages = this.state.messages.concat(newMessage);
     this.setState({messages: messages})
@@ -34,9 +33,10 @@ export default class App extends Component {
     }
 
     this.socket.onmessage = (event) => {
-      const parsed = JSON.parse(event.data);
-      this.addMessage(parsed);      
-    }
+      console.log("This is my event: ", event.data);
+      const data = JSON.parse(event.data);
+      this.addMessage(data); 
+      }
 
   }
 
@@ -46,9 +46,9 @@ export default class App extends Component {
     return (
       <div>
         <nav className="navbar">
-          <a href="/" className="navbar-brand">Yapper</a>
+          <a href="/" className="navbar-brand"><img src="../build/logo.png" className="logo"/> Yapper</a>
         </nav>
-        <Messages messages={this.state.messages} />
+        <Messages messages={this.state.messages} notifications={this.state.notifications}/>
         <ChatBar user={this.state.currentUser} socket={this.socket} changeUser={this.changeUser} />
       </div>
     );

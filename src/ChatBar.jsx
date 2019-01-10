@@ -1,6 +1,5 @@
 require("../styles/home.scss");
 import React, {Component} from 'react';
-const uuidv1 = require('uuid/v1');
 
 export default class ChatBar extends Component {
     constructor(props) {
@@ -19,7 +18,7 @@ export default class ChatBar extends Component {
     onEnter = (event) => {
         if(event.keyCode == 13) {
             const message = {
-                id: uuidv1(),
+                type: 'postMessage',
                 username: this.props.user.name,
                 content: this.state.content
             }
