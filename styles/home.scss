@@ -1,8 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css");
 
+$primary-color: #41B3A3;
+$secondary-color: #C38D9E;
+$third-color: #85CDCA;
+$fourth-color: #E27D60;
+
 body {
-  background: white;
   color: black;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
@@ -10,7 +14,7 @@ body {
 }
 
 .chatbar {
-  background: #81D8D0;
+  background: $secondary-color;
   // border-top: 1px solid black;
   bottom: 0;
   display: flex;
@@ -22,12 +26,14 @@ body {
 
 .chatbar-message,
 .chatbar-username {
-  border: 1px solid black;
+  border: 1px solid $fourth-color;
+  border-radius: 5px;
   display: block;
-  height: 40px;
+  height: 50px;
+  font-size: 16px;
   line-height: 40px;
   margin: 5px;
-  padding: 0 9px;
+  padding: 0 10px;
 }
 
 .chatbar-message {
@@ -50,6 +56,7 @@ body {
 
 .message-content,
 .message-username {
+  font-size: 16px;
   overflow: hidden;
   margin: 5px;
   padding: 0 10px;
@@ -65,11 +72,11 @@ body {
 }
 
 .navbar {
-  background: #81D8D0;
+  background: $primary-color;
   // border-bottom: 1px solid black;
-  height: 60px;
+  height: 70px;
   left: 0;
-  padding: 0 10px;
+  padding: 0 15px;
   position: fixed;
   right: 0;
   top: 0;

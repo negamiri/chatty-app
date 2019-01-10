@@ -5,6 +5,8 @@ import MessageList from './MessageList.jsx';
 
 export default class Messages extends Component {
     render() {
+        console.log("Rendering <Messages />");
+
         return(  
         <div>
             <main className="messages">
@@ -12,9 +14,9 @@ export default class Messages extends Component {
                 return (<MessageList message={message} key={message.id}/>)
             })
             }
-                <div className="message system">
+                {/* <div className="message system">
                 Anonymous1 changed their name to nomnom.
-                </div>
+                </div> */}
             </main>
       </div>)
     }
