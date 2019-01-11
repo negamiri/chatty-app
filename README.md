@@ -5,7 +5,7 @@ Chatter is a SPA (single-page application) using React, Websockets, HTML, CSS, U
 Users can change their name and start chatting with anyone who's online. They can also see how many users are online.
 
 ## Screenshot
-!["Main page"](https://github.com/negamiri/chatty-app/blob/master/public/Chatter.png?raw=true)
+!["Main page"](https://github.com/negamiri/chatty-app/blob/master/public/Chatter.gif?raw=true)
 
 ## Getting started
 * npm i to install all dependencies (using the npm install command)
