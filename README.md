@@ -13,10 +13,17 @@ Users can change their name and start chatting with anyone who's online. They ca
 * On another terminal, navigate to 'chatty_server' and use node server to connect to WebSocket
 
 ## Dependencies
-* Babel
+* Babel core
+* Babel loader
+* Babel presetes2015
+* Babel preset react
 * CSS-Loader
+* Node sass
 * React
-* Sass
-* Sock js
+* React DOM
+* Sass loader
+* Sock js client
+* Style loader
 * Webpack
+* Webpack dev server
 * Websocket
