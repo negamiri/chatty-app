@@ -19,6 +19,7 @@ Users can change their name and start chatting with anyone who's online. They ca
 * Babel preset react
 * CSS-Loader
 * Express
+* Linkify JS
 * Node sass
 * React
 * React DOM

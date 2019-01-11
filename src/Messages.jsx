@@ -12,7 +12,7 @@ export default class Messages extends Component {
             {this.props.messages.map(message => {
                 switch(message.type) {
                     case "incomingMessage":
-                        return (<MessageList message={message} key={message.id}/>);
+                        return (<MessageList message={message} key={message.id} messagesList={this.props.messages} />);
                         break;
                     case "incomingNotification":
                         return(
