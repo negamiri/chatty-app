@@ -5,9 +5,10 @@ import ChatBar from './ChatBar.jsx';
 export default class App extends Component {
   constructor(props) {
     super(props);
+    const rand = Math.floor(Math.random() * 5000);
     this.state = {
       currentUser: {
-        name: "Bob"},
+        name: `Default-User-${rand}`},
       messages: [],
       connectedUsers: 0
     }
