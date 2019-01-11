@@ -5,11 +5,10 @@ import MessageList from './MessageList.jsx';
 
 export default class Messages extends Component {
     render() {
-        console.log("Rendering <Messages />");
 
         return(  
         <div>
-            <main className="messages">
+            <main className="messagesContainer">
             {this.props.messages.map(message => {
                 switch(message.type) {
                     case "incomingMessage":
@@ -17,7 +16,7 @@ export default class Messages extends Component {
                         break;
                     case "incomingNotification":
                         return(
-                        <div className="message system">
+                        <div className="message system" key={message.id}>
                         {message.content}
                         </div>)
                         break;
@@ -26,10 +25,7 @@ export default class Messages extends Component {
                 }
             })
             }
-                {/* <div className="message system">
-                Anonymous1 changed their name to nomnom.
-                </div> */}
             </main>
-      </div>)
+    </div>)
     }
 }

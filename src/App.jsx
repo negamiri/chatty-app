@@ -6,8 +6,10 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: {name: "Bob"},
-      messages: []
+      currentUser: {
+        name: "Bob"},
+      messages: [],
+      connectedUsers: 0
     }
 
     this.socket = new WebSocket("ws://localhost:3001");
@@ -22,31 +24,36 @@ export default class App extends Component {
   }
 
   changeUser(newUser) {
-    this.setState({currentUser: {name: newUser}});
+    this.setState({currentUser: {
+      name: newUser,}});
   }
 
 
   componentDidMount() {
-    console.log("componentDidMount <App />");
-    this.socket.onopen = () => {
-      console.log("Connected to the server");
-    }
 
+    this.socket.onopen = () => {
+    }
+          
     this.socket.onmessage = (event) => {
-      console.log("This is my event: ", event.data);
       const data = JSON.parse(event.data);
-      this.addMessage(data); 
+      if (typeof data === "number") {
+        this.setState({connectedUsers: event.data});
+      } else {
+        this.addMessage(data); 
       }
+    }
 
   }
 
   render() {
-    console.log("Rendering <App />");
 
     return (
       <div>
         <nav className="navbar">
-          <a href="/" className="navbar-brand"><img src="../build/logo.png" className="logo"/> Yapper</a>
+          <a href="/" className="navbar-brand"><img src="../build/logo.png" className="logo"/>Chatter</a>
+          <div className="counter">
+          {this.state.connectedUsers} users online
+          </div>
         </nav>
         <Messages messages={this.state.messages} notifications={this.state.notifications}/>
         <ChatBar user={this.state.currentUser} socket={this.socket} changeUser={this.changeUser} />
