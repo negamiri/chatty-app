@@ -18,12 +18,14 @@ Users can change their name and start chatting with anyone who's online. They ca
 * Babel presetes2015
 * Babel preset react
 * CSS-Loader
+* Express
 * Node sass
 * React
 * React DOM
 * Sass loader
 * Sock js client
 * Style loader
+* UUID
 * Webpack
 * Webpack dev server
 * Websocket
