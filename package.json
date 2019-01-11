@@ -20,11 +20,10 @@
     "webpack"
   ],
   "author": "Negar Amiri",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/noahlotzer/react-simple-boilerplate/issues"
   },
-  "homepage": "https://github.com/noahlotzer/react-simple-boilerplate",
+  "homepage": "https://github.com/negamiri/chatty-app",
   "engines": {
     "node": ">=6.0.0"
   },
